@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<beans xmlns="http://www.springframework.org/schema/beans"    
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:aop="http://www.springframework.org/schema/aop"   
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:jee="http://www.springframework.org/schema/jee"  
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"   
+    xsi:schemaLocation="    
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd  
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd  
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">    
+
+	<!-- 使用注解的包，包括子集 -->
+	<context:component-scan base-package="org.csw.controller.baseinfo" />
+	
+	<mvc:annotation-driven /> 
+	
+	<!-- 本来我打算在 dao, service, controller三层都使用xml配置方式来实现注入
+		但是目前controller这层还没有弄好，就先在dao,service这两层使用xml bean,
+		在controller层使用注解的方式
+	 
+	 <bean id="exceptionResolver" class="com.his.controller.baseinfo.CustomSimpleMappingExceptionResolver">  
+    </bean>-->
+</beans>  

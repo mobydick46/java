@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.csw.dao.baseinfo.TB_HYDRONODE_BDao" >
+  <resultMap id="BaseResultMap" type="org.csw.entity.baseinfo.TB_HYDRONODE_B" >
+    <id column="NDCD" property="ndcd" jdbcType="VARCHAR" />
+    <result column="NDNM" property="ndnm" jdbcType="VARCHAR" />
+    <result column="NDTP" property="ndtp" jdbcType="INTEGER" />
+    <result column="RVCD" property="rvcd" jdbcType="VARCHAR" />
+    <result column="RMCHA" property="rmcha" jdbcType="DOUBLE" />
+    <result column="LGTD" property="lgtd" jdbcType="DOUBLE" />
+    <result column="LTTD" property="lttd" jdbcType="DOUBLE" />
+    <result column="DWNDCD" property="dwndcd" jdbcType="VARCHAR" />
+    <result column="SYMLEV" property="symlev" jdbcType="DOUBLE" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    NDCD, NDNM, NDTP, RVCD, RMCHA, LGTD, LTTD, DWNDCD, SYMLEV
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_hydronode_b
+    where NDCD = #{ndcd,jdbcType=VARCHAR}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tb_hydronode_b
+    where NDCD = #{ndcd,jdbcType=VARCHAR}
+  </delete>
+  
+  <insert id="insertSelective" parameterType="org.csw.entity.baseinfo.TB_HYDRONODE_B" >
+    insert into tb_hydronode_b
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ndcd != null" >
+        NDCD,
+      </if>
+      <if test="ndnm != null" >
+        NDNM,
+      </if>
+      <if test="ndtp != null" >
+        NDTP,
+      </if>
+      <if test="rvcd != null" >
+        RVCD,
+      </if>
+      <if test="rmcha != null" >
+        RMCHA,
+      </if>
+      <if test="lgtd != null" >
+        LGTD,
+      </if>
+      <if test="lttd != null" >
+        LTTD,
+      </if>
+      <if test="dwndcd != null" >
+        DWNDCD,
+      </if>
+      <if test="symlev != null" >
+        SYMLEV,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ndcd != null" >
+        #{ndcd,jdbcType=VARCHAR},
+      </if>
+      <if test="ndnm != null" >
+        #{ndnm,jdbcType=VARCHAR},
+      </if>
+      <if test="ndtp != null" >
+        #{ndtp,jdbcType=INTEGER},
+      </if>
+      <if test="rvcd != null" >
+        #{rvcd,jdbcType=VARCHAR},
+      </if>
+      <if test="rmcha != null" >
+        #{rmcha,jdbcType=DOUBLE},
+      </if>
+      <if test="lgtd != null" >
+        #{lgtd,jdbcType=DOUBLE},
+      </if>
+      <if test="lttd != null" >
+        #{lttd,jdbcType=DOUBLE},
+      </if>
+      <if test="dwndcd != null" >
+        #{dwndcd,jdbcType=VARCHAR},
+      </if>
+      <if test="symlev != null" >
+        #{symlev,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.csw.entity.baseinfo.TB_HYDRONODE_B" >
+    update tb_hydronode_b
+    <set >
+      <if test="ndnm != null" >
+        NDNM = #{ndnm,jdbcType=VARCHAR},
+      </if>
+      <if test="ndtp != null" >
+        NDTP = #{ndtp,jdbcType=INTEGER},
+      </if>
+      <if test="rvcd != null" >
+        RVCD = #{rvcd,jdbcType=VARCHAR},
+      </if>
+      <if test="rmcha != null" >
+        RMCHA = #{rmcha,jdbcType=DOUBLE},
+      </if>
+      <if test="lgtd != null" >
+        LGTD = #{lgtd,jdbcType=DOUBLE},
+      </if>
+      <if test="lttd != null" >
+        LTTD = #{lttd,jdbcType=DOUBLE},
+      </if>
+      <if test="dwndcd != null" >
+        DWNDCD = #{dwndcd,jdbcType=VARCHAR},
+      </if>
+      <if test="symlev != null" >
+        SYMLEV = #{symlev,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where NDCD = #{ndcd,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="findTB_HYDRONODE_B" parameterType="Map" resultMap="BaseResultMap">
+		select * from tb_hydronode_b
+		<where>
+		</where>
+		<if test="start!=null and size!=null">
+			order by NDCD offset ${start} rows fetch next ${size} rows only
+		</if>
+	</select>
+	
+	<select id="getTotalTB_HYDRONODE_B" parameterType="Map" resultType="Long">
+		select count(*) from tb_hydronode_b
+		<where>
+		</where>
+	</select>
+</mapper>

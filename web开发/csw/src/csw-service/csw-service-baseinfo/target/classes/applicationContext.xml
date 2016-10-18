@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="    
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+        http://www.springframework.org/schema/jee 
+        http://www.springframework.org/schema/jee/spring-jee-4.0.xsd  
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+	<bean id="basicAttributeService" class="org.csw.service.baseinfo.impl.BasicAttributeServiceImpl">
+	</bean>
+	<bean id="dataConnectionService" class="org.csw.service.baseinfo.impl.DataConnectionServiceImpl">
+	</bean>
+	<bean id="dataUnitService" class="org.csw.service.baseinfo.impl.DataUnitServiceImpl">
+	</bean>
+	<bean id="unitStateService" class="org.csw.service.baseinfo.impl.UnitStateServiceImpl">
+	</bean>
+    <bean id="calculationObjectService" class="org.csw.service.baseinfo.impl.CalculationObjectServiceImpl">
+	</bean>
+	<bean id="modelMethodService" class="org.csw.service.baseinfo.impl.ModelMethodServiceImpl">
+	</bean>
+    <bean id="inputOutputService" class="org.csw.service.baseinfo.impl.InputOutputServiceImpl">
+	</bean>
+	<bean id="functionTypeService" class="org.csw.service.baseinfo.impl.FunctionTypeServiceImpl">
+	</bean>
+	<bean id="scheduleTimeService" class="org.csw.service.baseinfo.impl.ScheduleTimeServiceImpl">
+	</bean>
+	<bean id="functionCalculationService" class="org.csw.service.baseinfo.impl.FunctionCalculationServiceImpl">
+	</bean>
+	<bean id="predictionSchemeService" class="org.csw.service.baseinfo.impl.PredictionSchemeServiceImpl">
+	</bean>
+	<bean id="functionModelService" class="org.csw.service.baseinfo.impl.FunctionModelServiceImpl">
+	</bean>
+	<bean id="decisionPlanService" class="org.csw.service.baseinfo.impl.DecisionPlanServiceImpl">
+	</bean>
+
+</beans>

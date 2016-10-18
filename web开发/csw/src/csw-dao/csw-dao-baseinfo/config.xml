@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config><basicattributes><basicattribute id="3" name="系统名称" content="综合调度系统" remark="一期工程"/><basicattribute id="4" name="版本号" content="V1.0" remark="出厂版本"/><basicattribute id="5" name="项目描述" content="长江流域综合调度" remark="长江委科研项目"/></basicattributes><DataUnits><DataUnit id="1" datatype="流量" standardunit="m3/s" displayunit="m3/s" times="1" controlformat="有效单位" figure="3"/></DataUnits></config>

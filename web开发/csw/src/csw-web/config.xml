@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config> 
+  <basicattributes> 
+    <basicattribute id="1" name="系统名称" content="综合调度系统1" remark="一期工程"/>  
+    <basicattribute id="2" name="版本号" content="V1.0" remark="出厂版本"/>  
+    <basicattribute id="3" name="项目描述" content="长江流域综合调度" remark="长江委科研项目"/>  
+    <basicattribute id="4" name="文件保存路径" content="D:\WORK" remark="长江委科研项目"/> 
+  </basicattributes>  
+  <DataConnections> 
+    <DataConnection id="1" name="数据库地址1" content="10.114.62.55" remark="主服务器"/>  
+    <DataConnection id="2" name="数据库地址2" content="10.114.62.6" remark="备用服务器"/>  
+    <DataConnection id="3" name="数据库名称" content="ZHDD" remark=""/>  
+    <DataConnection id="4" name="用户名" content="ghcxxs" remark="管理员权限"/>  
+    <DataConnection id="5" name="密码" content="123456" remark=""/> 
+  </DataConnections>  
+  <DataUnits> 
+    <DataUnit id="1" datatype="6" standardunit="" displayunit="元" times="1" controlformat="2" figure="1"/>  
+    <DataUnit id="2" datatype="2" standardunit="" displayunit="百万m³" times="1" controlformat="2" figure="1"/>  
+    <DataUnit id="3" datatype="2" standardunit="" displayunit="万m³/s" times="0" controlformat="1" figure="1"/>  
+    <DataUnit id="4" datatype="15" standardunit="" displayunit="h" times="2" controlformat="2" figure="3"/>  
+    <DataUnit id="5" datatype="2" standardunit="" displayunit="百k㎡" times="" controlformat="2" figure="2"/>  
+    <DataUnit id="6" datatype="" standardunit="" displayunit="" times="" controlformat="" figure=""/> 
+  </DataUnits>  
+  <GateStates> 
+    <GateState id="1" stateDefinition="2" stateID="" stateName=""/>  
+    <GateState id="2" stateDefinition="0" stateID="" stateName=""/>  
+    <GateState id="3" stateDefinition="2" stateID="" stateName=""/>  
+    <GateState id="4" stateDefinition="3" stateID="" stateName=""/>  
+    <GateState id="5" stateDefinition="0" stateID="" stateName=""/>  
+    <GateState id="6" stateDefinition="1" stateID="" stateName=""/> 
+  </GateStates>  
+  <UnitStates> 
+    <UnitState id="1" stateDefinition="2" stateID="" stateName=""/>  
+    <UnitState id="2" stateDefinition="0" stateID="" stateName=""/>  
+    <UnitState id="3" stateDefinition="0" stateID="" stateName=""/>  
+    <UnitState id="4" stateDefinition="2" stateID="" stateName=""/>  
+    <UnitState id="5" stateDefinition="2" stateID="" stateName=""/>  
+    <UnitState id="6" stateDefinition="0" stateID="" stateName=""/>  
+    <UnitState id="7" stateDefinition="1" stateID="" stateName=""/>  
+    <UnitState id="8" stateDefinition="0" stateID="" stateName=""/> 
+  </UnitStates>  
+  <CalculationObjects> 
+    <CalculationObject id="1" objectCode="SX1" objectName="三峡" isSet="√" nodeType="1" parentCode="" parentName=""/>  
+    <CalculationObject id="2" objectCode="GZB1" objectName="葛洲坝" isSet="√" nodeType="1" parentCode="" parentName=""/>  
+    <CalculationObject id="3" objectCode="JZ1" objectName="机组1" isSet="√" nodeType="11" parentCode="GZB1" parentName="葛洲坝"/>  
+    <CalculationObject id="4" objectCode="JZ2" objectName="机组2" isSet="√" nodeType="11" parentCode="GZB1" parentName="葛洲坝"/>  
+    <CalculationObject id="5" objectCode="ZM1" objectName="闸门1" isSet="√" nodeType="12" parentCode="GZB1" parentName="葛洲坝"/>  
+    <CalculationObject id="6" objectCode="ZM2" objectName="闸门2" isSet="√" nodeType="12" parentCode="GZB1" parentName="葛洲坝"/>  
+    <CalculationObject id="7" objectCode="" objectName="" isSet="" nodeType="1" parentCode="" parentName=""/> 
+  </CalculationObjects>  
+  <ModelMethods> 
+    <ModelMethod id="1" code="OFCTRL" name="出库控制" description="防洪泄流" type="2" combCalculation="" sourceClass="com.cjsjy."/>  
+    <ModelMethod id="2" code="MAXE" name="发电量最大" description="发电计划" type="3" combCalculation="" sourceClass="com.cjsjy."/>  
+    <ModelMethod id="3" code="WRSET" name="水资源配置" description="水资源优化" type="4" combCalculation="√" sourceClass="com.cjsjy."/>  
+    <ModelMethod id="4" code="WDSP" name="引供水调度" description="水量分配" type="3" combCalculation="√" sourceClass="com.cjsjy."/> 
+  </ModelMethods>  
+  <InputOutputs> 
+    <InputOutput id="1" projectName="期初水位" isSet="√" description="调度期初起算水位" modelCode="WRSET" type="3"/>  
+    <InputOutput id="2" projectName="期末水位" isSet="" description="调度期末控制水位" modelCode="WRSET" type="3"/>  
+    <InputOutput id="3" projectName="期初入库" isSet="√" description="调度期初入库流量" modelCode="WRSET" type="3"/>  
+    <InputOutput id="4" projectName="期初出库" isSet="" description="调度期初出库流量" modelCode="WRSET" type="3"/>  
+    <InputOutput id="5" projectName="期初尾水位" isSet="√" description="调度期初下游水位" modelCode="WRSET" type="3"/>  
+    <InputOutput id="6" projectName="防洪库容使用量" isSet="√" description="防洪库容控制使用量" modelCode="WRSET" type="3"/>  
+    <InputOutput id="7" projectName="综合出力系数K之" isSet="" description="电站综合出力系数" modelCode="WRSET" type="3"/>  
+    <InputOutput id="8" projectName="水量耗水率" isSet="√" description="平均水量耗水率" modelCode="WRSET" type="3"/>  
+    <InputOutput id="9" projectName="流量耗水率" isSet="√" description="平均流量耗水率" modelCode="WRSET" type="3"/>  
+    <InputOutput id="10" projectName="出库至下级传播时间" isSet="" description="出库传播至下级水库耗时" modelCode="WRSET" type="3"/>  
+    <InputOutput id="11" projectName="负荷率" isSet="" description="电站平均负荷率(0~1)" modelCode="WRSET" type="3"/>  
+    <InputOutput id="12" projectName="平均尾水位偏差" isSet="" description="出库~尾水位折算偏差" modelCode="WRSET" type="3"/>  
+    <InputOutput id="13" projectName="平均水头损失" isSet="" description="电站平均水头损失" modelCode="WRSET" type="3"/>  
+    <InputOutput id="14" projectName="预报流量" isSet="√" description="调度期初起算水位" modelCode="WRSET" type="4"/>  
+    <InputOutput id="15" projectName="最高库水位" isSet="" description="调度期末控制水位" modelCode="WRSET" type="4"/>  
+    <InputOutput id="16" projectName="最低库水位" isSet="√" description="调度期初入库流量" modelCode="WRSET" type="4"/>  
+    <InputOutput id="17" projectName="最大出库" isSet="" description="调度期初出库流量" modelCode="WRSET" type="4"/>  
+    <InputOutput id="18" projectName="最小出库" isSet="√" description="调度期初下游水位" modelCode="WRSET" type="4"/>  
+    <InputOutput id="19" projectName="最大出力" isSet="" description="防洪库容控制使用量" modelCode="WRSET" type="4"/>  
+    <InputOutput id="20" projectName="最小出力" isSet="√" description="电站综合出力系数" modelCode="WRSET" type="4"/>  
+    <InputOutput id="21" projectName="计划出库" isSet="" description="平均水量耗水率" modelCode="WRSET" type="4"/>  
+    <InputOutput id="22" projectName="计划泄流" isSet="√" description="平均流量耗水率" modelCode="WRSET" type="4"/>  
+    <InputOutput id="23" projectName="计划发电流量" isSet="" description="出库传播至下级水库耗时" modelCode="WRSET" type="4"/>  
+    <InputOutput id="24" projectName="计划出力" isSet="" description="电站平均负荷率(0~1)" modelCode="WRSET" type="4"/>  
+    <InputOutput id="25" projectName="汛限水位" isSet="" description="出库~尾水位折算偏差" modelCode="WRSET" type="4"/>  
+    <InputOutput id="26" projectName="其他出库流量" isSet="" description="电站平均水头损失" modelCode="WRSET" type="4"/>  
+    <InputOutput id="27" projectName="库区引水流量" isSet="" description="电站平均水头损失" modelCode="WRSET" type="4"/>  
+    <InputOutput id="28" projectName="是否计算到机组" isSet="" description="调度期初起算水位" modelCode="WRSET" type="0"/>  
+    <InputOutput id="29" projectName="期初机组状态" isSet="" description="调度期末控制水位" modelCode="WRSET" type="0"/>  
+    <InputOutput id="30" projectName="机组开启顺序" isSet="" description="调度期初入库流量" modelCode="WRSET" type="0"/>  
+    <InputOutput id="31" projectName="机组关闭顺序" isSet="" description="调度期初出库流量" modelCode="WRSET" type="0"/>  
+    <InputOutput id="32" projectName="是否计算到闸门" isSet="" description="调度期初下游水位" modelCode="WRSET" type="0"/>  
+    <InputOutput id="33" projectName="期初闸门状态" isSet="" description="防洪库容控制使用量" modelCode="WRSET" type="0"/>  
+    <InputOutput id="34" projectName="闸门开启顺序" isSet="" description="电站综合出力系数" modelCode="WRSET" type="0"/>  
+    <InputOutput id="35" projectName="闸门关闭顺序" isSet="" description="平均水量耗水率" modelCode="WRSET" type="0"/>  
+    <InputOutput id="36" projectName="水库调度图" isSet="" description="平均流量耗水率" modelCode="WRSET" type="0"/>  
+    <InputOutput id="37" projectName="出力流量换算方式" isSet="" description="出库传播至下级水库耗时" modelCode="WRSET" type="0"/>  
+    <InputOutput id="38" projectName="机组检修计划" isSet="" description="电站平均负荷率(0~1)" modelCode="WRSET" type="0"/>  
+    <InputOutput id="39" projectName="闸门检修计划" isSet="" description="出库~尾水位折算偏差" modelCode="WRSET" type="0"/>  
+    <InputOutput id="40" projectName="入库流量" isSet="" description="调度期初起算水位" modelCode="WRSET" type="1"/>  
+    <InputOutput id="41" projectName="出库流量" isSet="" description="调度期末控制水位" modelCode="WRSET" type="1"/>  
+    <InputOutput id="42" projectName="发电流量" isSet="" description="调度期初入库流量" modelCode="WRSET" type="1"/>  
+    <InputOutput id="43" projectName="泄洪流量" isSet="" description="调度期初出库流量" modelCode="WRSET" type="1"/>  
+    <InputOutput id="44" projectName="其他出库流量" isSet="" description="调度期初下游水位" modelCode="WRSET" type="1"/>  
+    <InputOutput id="45" projectName="库区引水流量" isSet="" description="防洪库容控制使用量" modelCode="WRSET" type="1"/>  
+    <InputOutput id="46" projectName="时段初水位" isSet="" description="电站综合出力系数" modelCode="WRSET" type="1"/>  
+    <InputOutput id="47" projectName="时段末水位" isSet="" description="平均水量耗水率" modelCode="WRSET" type="1"/>  
+    <InputOutput id="48" projectName="平均出力" isSet="" description="平均流量耗水率" modelCode="WRSET" type="1"/>  
+    <InputOutput id="49" projectName="平均尾水位" isSet="" description="出库传播至下级水库耗时" modelCode="WRSET" type="1"/>  
+    <InputOutput id="50" projectName="毛水头" isSet="" description="电站平均负荷率(0~1)" modelCode="WRSET" type="1"/>  
+    <InputOutput id="51" projectName="净水头" isSet="" description="出库~尾水位折算偏差" modelCode="WRSET" type="1"/>  
+    <InputOutput id="52" projectName="水头损失" isSet="" description="调度期初起算水位" modelCode="WRSET" type="1"/>  
+    <InputOutput id="53" projectName="入库水量" isSet="" description="调度期末控制水位" modelCode="WRSET" type="1"/>  
+    <InputOutput id="54" projectName="出库水量" isSet="" description="调度期初入库流量" modelCode="WRSET" type="1"/>  
+    <InputOutput id="55" projectName="发电水量" isSet="" description="调度期初出库流量" modelCode="WRSET" type="1"/>  
+    <InputOutput id="56" projectName="泄洪量" isSet="" description="调度期初下游水位" modelCode="WRSET" type="1"/>  
+    <InputOutput id="57" projectName="其他出库水量" isSet="" description="防洪库容控制使用量" modelCode="WRSET" type="1"/>  
+    <InputOutput id="58" projectName="库区引水量" isSet="" description="电站综合出力系数" modelCode="WRSET" type="1"/>  
+    <InputOutput id="59" projectName="时段初库容" isSet="" description="平均水量耗水率" modelCode="WRSET" type="1"/>  
+    <InputOutput id="60" projectName="时段末库容" isSet="" description="平均流量耗水率" modelCode="WRSET" type="1"/>  
+    <InputOutput id="61" projectName="发电量" isSet="" description="出库传播至下级水库耗时" modelCode="WRSET" type="1"/>  
+    <InputOutput id="62" projectName="蓄水流量" isSet="" description="电站平均负荷率(0~1)" modelCode="WRSET" type="1"/>  
+    <InputOutput id="63" projectName="蓄水量" isSet="" description="出库~尾水位折算偏差" modelCode="WRSET" type="1"/>  
+    <InputOutput id="64" projectName="期初水位" isSet="√" description="调度期初起算水位" modelCode="WDSP" type="3"/>  
+    <InputOutput id="65" projectName="期末水位" isSet="" description="调度期末控制水位" modelCode="WDSP" type="3"/>  
+    <InputOutput id="66" projectName="期初入库" isSet="√" description="调度期初入库流量" modelCode="WDSP" type="3"/>  
+    <InputOutput id="67" projectName="期初出库" isSet="" description="调度期初出库流量" modelCode="WDSP" type="3"/>  
+    <InputOutput id="68" projectName="期初尾水位" isSet="√" description="调度期初下游水位" modelCode="WDSP" type="3"/>  
+    <InputOutput id="69" projectName="防洪库容使用量" isSet="√" description="防洪库容控制使用量" modelCode="WDSP" type="3"/>  
+    <InputOutput id="70" projectName="综合出力系数K之" isSet="" description="电站综合出力系数" modelCode="WDSP" type="3"/>  
+    <InputOutput id="71" projectName="水量耗水率" isSet="√" description="平均水量耗水率" modelCode="WDSP" type="3"/>  
+    <InputOutput id="72" projectName="流量耗水率" isSet="√" description="平均流量耗水率" modelCode="WDSP" type="3"/>  
+    <InputOutput id="73" projectName="出库至下级传播时间" isSet="" description="出库传播至下级水库耗时" modelCode="WDSP" type="3"/>  
+    <InputOutput id="74" projectName="负荷率" isSet="" description="电站平均负荷率(0~1)" modelCode="WDSP" type="3"/>  
+    <InputOutput id="75" projectName="平均尾水位偏差" isSet="" description="出库~尾水位折算偏差" modelCode="WDSP" type="3"/>  
+    <InputOutput id="76" projectName="平均水头损失" isSet="" description="电站平均水头损失" modelCode="WDSP" type="3"/>  
+    <InputOutput id="77" projectName="预报流量" isSet="√" description="调度期初起算水位" modelCode="WDSP" type="4"/>  
+    <InputOutput id="78" projectName="最高库水位" isSet="" description="调度期末控制水位" modelCode="WDSP" type="4"/>  
+    <InputOutput id="79" projectName="最低库水位" isSet="√" description="调度期初入库流量" modelCode="WDSP" type="4"/>  
+    <InputOutput id="80" projectName="最大出库" isSet="" description="调度期初出库流量" modelCode="WDSP" type="4"/>  
+    <InputOutput id="81" projectName="最小出库" isSet="√" description="调度期初下游水位" modelCode="WDSP" type="4"/>  
+    <InputOutput id="82" projectName="最大出力" isSet="" description="防洪库容控制使用量" modelCode="WDSP" type="4"/>  
+    <InputOutput id="83" projectName="最小出力" isSet="√" description="电站综合出力系数" modelCode="WDSP" type="4"/>  
+    <InputOutput id="84" projectName="计划出库" isSet="" description="平均水量耗水率" modelCode="WDSP" type="4"/>  
+    <InputOutput id="85" projectName="计划泄流" isSet="√" description="平均流量耗水率" modelCode="WDSP" type="4"/>  
+    <InputOutput id="86" projectName="计划发电流量" isSet="" description="出库传播至下级水库耗时" modelCode="WDSP" type="4"/>  
+    <InputOutput id="87" projectName="计划出力" isSet="" description="电站平均负荷率(0~1)" modelCode="WDSP" type="4"/>  
+    <InputOutput id="88" projectName="汛限水位" isSet="" description="出库~尾水位折算偏差" modelCode="WDSP" type="4"/>  
+    <InputOutput id="89" projectName="其他出库流量" isSet="" description="电站平均水头损失" modelCode="WDSP" type="4"/>  
+    <InputOutput id="90" projectName="库区引水流量" isSet="" description="电站平均水头损失" modelCode="WDSP" type="4"/>  
+    <InputOutput id="91" projectName="是否计算到机组" isSet="" description="调度期初起算水位" modelCode="WDSP" type="0"/>  
+    <InputOutput id="92" projectName="期初机组状态" isSet="" description="调度期末控制水位" modelCode="WDSP" type="0"/>  
+    <InputOutput id="93" projectName="机组开启顺序" isSet="" description="调度期初入库流量" modelCode="WDSP" type="0"/>  
+    <InputOutput id="94" projectName="机组关闭顺序" isSet="" description="调度期初出库流量" modelCode="WDSP" type="0"/>  
+    <InputOutput id="95" projectName="是否计算到闸门" isSet="" description="调度期初下游水位" modelCode="WDSP" type="0"/>  
+    <InputOutput id="96" projectName="期初闸门状态" isSet="" description="防洪库容控制使用量" modelCode="WDSP" type="0"/>  
+    <InputOutput id="97" projectName="闸门开启顺序" isSet="" description="电站综合出力系数" modelCode="WDSP" type="0"/>  
+    <InputOutput id="98" projectName="闸门关闭顺序" isSet="" description="平均水量耗水率" modelCode="WDSP" type="0"/>  
+    <InputOutput id="99" projectName="水库调度图" isSet="" description="平均流量耗水率" modelCode="WDSP" type="0"/>  
+    <InputOutput id="100" projectName="出力流量换算方式" isSet="" description="出库传播至下级水库耗时" modelCode="WDSP" type="0"/>  
+    <InputOutput id="101" projectName="机组检修计划" isSet="" description="电站平均负荷率(0~1)" modelCode="WDSP" type="0"/>  
+    <InputOutput id="102" projectName="闸门检修计划" isSet="" description="出库~尾水位折算偏差" modelCode="WDSP" type="0"/>  
+    <InputOutput id="103" projectName="入库流量" isSet="" description="调度期初起算水位" modelCode="WDSP" type="1"/>  
+    <InputOutput id="104" projectName="出库流量" isSet="" description="调度期末控制水位" modelCode="WDSP" type="1"/>  
+    <InputOutput id="105" projectName="发电流量" isSet="" description="调度期初入库流量" modelCode="WDSP" type="1"/>  
+    <InputOutput id="106" projectName="泄洪流量" isSet="" description="调度期初出库流量" modelCode="WDSP" type="1"/>  
+    <InputOutput id="107" projectName="其他出库流量" isSet="" description="调度期初下游水位" modelCode="WDSP" type="1"/>  
+    <InputOutput id="108" projectName="库区引水流量" isSet="" description="防洪库容控制使用量" modelCode="WDSP" type="1"/>  
+    <InputOutput id="109" projectName="时段初水位" isSet="" description="电站综合出力系数" modelCode="WDSP" type="1"/>  
+    <InputOutput id="110" projectName="时段末水位" isSet="" description="平均水量耗水率" modelCode="WDSP" type="1"/>  
+    <InputOutput id="111" projectName="平均出力" isSet="" description="平均流量耗水率" modelCode="WDSP" type="1"/>  
+    <InputOutput id="112" projectName="平均尾水位" isSet="" description="出库传播至下级水库耗时" modelCode="WDSP" type="1"/>  
+    <InputOutput id="113" projectName="毛水头" isSet="" description="电站平均负荷率(0~1)" modelCode="WDSP" type="1"/>  
+    <InputOutput id="114" projectName="净水头" isSet="" description="出库~尾水位折算偏差" modelCode="WDSP" type="1"/>  
+    <InputOutput id="115" projectName="水头损失" isSet="" description="调度期初起算水位" modelCode="WDSP" type="1"/>  
+    <InputOutput id="116" projectName="入库水量" isSet="" description="调度期末控制水位" modelCode="WDSP" type="1"/>  
+    <InputOutput id="117" projectName="出库水量" isSet="" description="调度期初入库流量" modelCode="WDSP" type="1"/>  
+    <InputOutput id="118" projectName="发电水量" isSet="" description="调度期初出库流量" modelCode="WDSP" type="1"/>  
+    <InputOutput id="119" projectName="泄洪量" isSet="" description="调度期初下游水位" modelCode="WDSP" type="1"/>  
+    <InputOutput id="120" projectName="其他出库水量" isSet="" description="防洪库容控制使用量" modelCode="WDSP" type="1"/>  
+    <InputOutput id="121" projectName="库区引水量" isSet="" description="电站综合出力系数" modelCode="WDSP" type="1"/>  
+    <InputOutput id="122" projectName="时段初库容" isSet="" description="平均水量耗水率" modelCode="WDSP" type="1"/>  
+    <InputOutput id="123" projectName="时段末库容" isSet="" description="平均流量耗水率" modelCode="WDSP" type="1"/>  
+    <InputOutput id="124" projectName="发电量" isSet="" description="出库传播至下级水库耗时" modelCode="WDSP" type="1"/>  
+    <InputOutput id="125" projectName="蓄水流量" isSet="" description="电站平均负荷率(0~1)" modelCode="WDSP" type="1"/>  
+    <InputOutput id="126" projectName="蓄水量" isSet="" description="出库~尾水位折算偏差" modelCode="WDSP" type="1"/> 
+  </InputOutputs>  
+  <FunctionTypes> 
+    <FunctionType id="1" projectName="流域防洪调度" type="2" isSet="" remark="流域联合防洪调度"/>  
+    <FunctionType id="2" projectName="水库调洪演算" type="2" isSet="√" remark="水库洪水调节计算"/>  
+    <FunctionType id="3" projectName="水资源调度" type="4" isSet="√" remark="引供水调度及水资源配置"/>  
+    <FunctionType id="4" projectName="中长期发电调度" type="3" isSet="√" remark="水电站群中长期发电计划"/>  
+    <FunctionType id="5" projectName="短期发电调度" type="3" isSet="√" remark="水电站群短期发电计划"/>  
+    <FunctionType id="6" projectName="实时发电调度" type="3" isSet="√" remark="水电站群中实时发电计划"/>  
+    <FunctionType id="7" projectName="生态调度" type="6" isSet="" remark="流域生态调度"/>  
+    <FunctionType id="8" projectName="风险分析" type="8" isSet="" remark="水库群调度方案风险评估"/> 
+  </FunctionTypes>  
+  <ScheduleTimes> 
+    <ScheduleTime id="1" timeNumber="3" timeUnit="2" defaultNumber="6" isDefault="" functionId="2"/>  
+    <ScheduleTime id="2" timeNumber="1" timeUnit="0" defaultNumber="6" isDefault="" functionId="2"/>  
+    <ScheduleTime id="3" timeNumber="1" timeUnit="3" defaultNumber="" isDefault="" functionId="3"/>  
+    <ScheduleTime id="4" timeNumber="2" timeUnit="4" defaultNumber="" isDefault="" functionId="4"/> 
+  </ScheduleTimes>  
+  <FunctionCalculations> 
+    <FunctionCalculation id="0" objectCode="SX1" objectName="三峡" isCalculation="√" nodeType="1" functionId="2" parentCode="" parentName=""/>  
+    <FunctionCalculation id="1" objectCode="GZB1" objectName="葛洲坝" isCalculation="√" nodeType="1" functionId="2" parentCode="" parentName=""/>  
+    <FunctionCalculation id="2" objectCode="JZ1" objectName="机组1" isCalculation="√" nodeType="11" functionId="2" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="3" objectCode="JZ2" objectName="机组2" isCalculation="√" nodeType="11" functionId="2" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="4" objectCode="ZM1" objectName="闸门1" isCalculation="√" nodeType="12" functionId="2" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="5" objectCode="ZM2" objectName="闸门2" isCalculation="√" nodeType="12" functionId="2" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="6" objectCode="SX1" objectName="三峡" isCalculation="√" nodeType="1" functionId="3" parentCode="" parentName=""/>  
+    <FunctionCalculation id="7" objectCode="GZB1" objectName="葛洲坝" isCalculation="√" nodeType="1" functionId="3" parentCode="" parentName=""/>  
+    <FunctionCalculation id="8" objectCode="JZ1" objectName="机组1" isCalculation="√" nodeType="11" functionId="3" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="9" objectCode="JZ2" objectName="机组2" isCalculation="√" nodeType="11" functionId="3" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="10" objectCode="ZM1" objectName="闸门1" isCalculation="√" nodeType="12" functionId="3" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="11" objectCode="ZM2" objectName="闸门2" isCalculation="√" nodeType="12" functionId="3" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="12" objectCode="SX1" objectName="三峡" isCalculation="√" nodeType="1" functionId="4" parentCode="" parentName=""/>  
+    <FunctionCalculation id="13" objectCode="GZB1" objectName="葛洲坝" isCalculation="√" nodeType="1" functionId="4" parentCode="" parentName=""/>  
+    <FunctionCalculation id="14" objectCode="JZ1" objectName="机组1" isCalculation="√" nodeType="11" functionId="4" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="15" objectCode="JZ2" objectName="机组2" isCalculation="√" nodeType="11" functionId="4" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="16" objectCode="ZM1" objectName="闸门1" isCalculation="√" nodeType="12" functionId="4" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="17" objectCode="ZM2" objectName="闸门2" isCalculation="√" nodeType="12" functionId="4" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="18" objectCode="SX1" objectName="三峡" isCalculation="√" nodeType="1" functionId="5" parentCode="" parentName=""/>  
+    <FunctionCalculation id="19" objectCode="GZB1" objectName="葛洲坝" isCalculation="√" nodeType="1" functionId="5" parentCode="" parentName=""/>  
+    <FunctionCalculation id="20" objectCode="JZ1" objectName="机组1" isCalculation="√" nodeType="11" functionId="5" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="21" objectCode="JZ2" objectName="机组2" isCalculation="√" nodeType="11" functionId="5" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="22" objectCode="ZM1" objectName="闸门1" isCalculation="√" nodeType="12" functionId="5" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="23" objectCode="ZM2" objectName="闸门2" isCalculation="√" nodeType="12" functionId="5" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="24" objectCode="SX1" objectName="三峡" isCalculation="√" nodeType="1" functionId="6" parentCode="" parentName=""/>  
+    <FunctionCalculation id="25" objectCode="GZB1" objectName="葛洲坝" isCalculation="√" nodeType="1" functionId="6" parentCode="" parentName=""/>  
+    <FunctionCalculation id="26" objectCode="JZ1" objectName="机组1" isCalculation="√" nodeType="11" functionId="6" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="27" objectCode="JZ2" objectName="机组2" isCalculation="√" nodeType="11" functionId="6" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="28" objectCode="ZM1" objectName="闸门1" isCalculation="√" nodeType="12" functionId="6" parentCode="GZB1" parentName="葛洲坝"/>  
+    <FunctionCalculation id="29" objectCode="ZM2" objectName="闸门2" isCalculation="√" nodeType="12" functionId="6" parentCode="GZB1" parentName="葛洲坝"/> 
+  </FunctionCalculations>  
+  <PredictionSchemes> 
+    <PredictionScheme id="1" predictionCode="" typeNumber="" typeUnit="" isDefault="" funCalculationId="11"/>  
+    <PredictionScheme id="3" predictionCode="xxx" typeNumber="2" typeUnit="1" isDefault="√" funCalculationId="7"/>  
+    <PredictionScheme id="4" predictionCode="" typeNumber="1" typeUnit="0" isDefault="" funCalculationId="6"/>  
+    <PredictionScheme id="5" predictionCode="" typeNumber="" typeUnit="" isDefault="" funCalculationId="1"/> 
+  </PredictionSchemes>  
+  <FunctionModels> 
+    <FunctionModel id="4" modelCode="OFCTRL" modelName="出库控制" description="防洪泄流" modelType="F" isApply="√" funCalculationId="" functionId="2" type="1"/>  
+    <FunctionModel id="5" modelCode="MAXE" modelName="发电量最大" description="发电计划" modelType="F" isApply="" funCalculationId="" functionId="2" type="1"/>  
+    <FunctionModel id="9" modelCode="WDSP" modelName="引供水调度" description="水量分配" modelType="F" isApply="" funCalculationId="7" functionId="2" type="2"/>  
+    <FunctionModel id="12" modelCode="WRSET" modelName="水资源配置" description="水资源优化" modelType="F" isApply="√" funCalculationId="7" functionId="2" type="2"/>  
+    <FunctionModel id="14" modelCode="WRSET" modelName="水资源配置" description="水资源优化" modelType="F" isApply="" funCalculationId="6" functionId="2" type="2"/>  
+    <FunctionModel id="16" modelCode="WRSET" modelName="水资源配置" description="水资源优化" modelType="F" isApply="" funCalculationId="12" functionId="2" type="2"/>  
+    <FunctionModel id="17" modelCode="WDSP" modelName="引供水调度" description="水量分配" modelType="F" isApply="" funCalculationId="6" functionId="2" type="2"/>  
+    <FunctionModel id="18" modelCode="WDSP" modelName="引供水调度" description="水量分配" modelType="F" isApply="" funCalculationId="12" functionId="2" type="2"/>  
+    <FunctionModel id="19" modelCode="" modelName="" description="" modelType="F" isApply="" funCalculationId="" functionId="2" type="1"/> 
+  </FunctionModels>  
+  <DecisionPlans> 
+    <DecisionPlan id="74" planName="入库流量" timeID="4" reservoirObject="" objectCode="" objectNumber="" number="22" functionId="4"/>  
+    <DecisionPlan id="75" planName="出库流量" timeID="4" reservoirObject="" objectCode="" objectNumber="" number="23" functionId="4"/>  
+    <DecisionPlan id="76" planName="时段初水位" timeID="4" reservoirObject="" objectCode="" objectNumber="" number="24" functionId="4"/>  
+    <DecisionPlan id="77" planName="时段末水位" timeID="4" reservoirObject="" objectCode="" objectNumber="" number="25" functionId="4"/>  
+    <DecisionPlan id="78" planName="平均出力" timeID="4" reservoirObject="" objectCode="" objectNumber="" number="26" functionId="4"/> 
+  </DecisionPlans> 
+</config>
