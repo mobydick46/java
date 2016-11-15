@@ -1,0 +1,108 @@
+.center{
+	width: 100%;
+	background-color: #eee;
+	padding-top:30px;
+	padding-bottom:30px;
+}
+
+.center-content{
+	width: 1010px;
+	margin:0 auto; 
+}
+
+.content-left{
+	width: 700px;
+	margin-right: 10px;
+}
+
+.content-right{
+	width: 300px;
+	height: 100%;
+	float:left;
+	background-color: red;
+}
+
+/*一个文章段*/
+.passage{
+	position: relative;
+	width: 700px;
+	margin-bottom: 10px;
+}
+
+.passage-lable{
+	position: absolute;
+	width:50px;
+	left:0;
+	top:20px;
+}
+
+.blog-date, .blog-cat{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color:#fff;
+}
+
+.blog-date{
+	background-color: #522A5C;
+}
+
+.blog-cat{
+	background-color: #A660B7;
+}
+
+.passage-content{
+	margin-left:50px;
+	width: 650px;
+	background-color: #fff;
+	padding: 10px;
+}
+
+.blog-heading {
+    font-size: 20px;
+    color: #a660b7;
+    font-family: "Arial";
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.blog-txt {
+    font-size: 12px;
+    line-height: 170%;
+    font-family: "Arial"
+}
+
+.sign-name{
+	position: absolute;
+	bottom:10px;
+	right:10px;
+	font-family: "SimSon";
+    font-size: 12px;
+    color: #999;
+}
+
+.blog-pre-next{
+	overflow: hidden;
+	margin-left: 50px;
+}
+
+.blog-pre-next li{
+	float:left;
+	list-style: none;
+	background-color: #fff;
+	margin-right: 10px;
+}
+
+.blog-pre-next li a{
+	text-decoration: none;
+    font-size: 14px;
+    padding: 10px;
+    display: block;
+    color: #000;
+}
+.blog-pre-next-active{
+	background-color: #A660B7;
+	color: #fff;
+	font-weight: bold;
+}

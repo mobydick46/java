@@ -1,0 +1,79 @@
+.selfintrol{
+	padding-top:100px;
+	padding-bottom: 100px;
+	width: 100%;
+	background-color: #eee;
+}
+
+.selfcontent{
+	position: relative;
+	left:40px;
+	width: 980px;
+	height: 1200px;
+	margin:0 auto;  /*自动对齐*/
+	background-color: #fff;   /*白色背景*/
+}
+
+.splitline{
+	width: 5px;
+	margin:0 auto;
+	height: 100%;
+	background-color: #eee;
+}
+
+.selfpic{
+	position: absolute;
+	border-radius: 80px;
+	left:410px;
+	top: -50px; 
+	border: 10px solid #eee;
+}
+
+.about-contactpic{
+	position: absolute;
+	border-radius: 50px;
+	left:440px;
+	top: 210px; 
+	border: 10px solid #eee;
+}
+
+.about-edupic{
+	position: absolute;
+	border-radius: 50px;
+	left:440px;
+	top: 410px; 
+	border: 10px solid #eee;
+}
+
+.about-workpic{
+	position: absolute;
+	border-radius: 50px;
+	left:440px;
+	top: 610px; 
+	border: 10px solid #eee;
+}
+
+.about-year{
+	width: 80px;
+	border-radius: 5px;
+	border: 10px solid #eee;
+	position: absolute;
+	left:450px; 
+	text-align: center;
+}
+
+.about-year1{
+	top:710px;
+}
+.about-year2{
+	top:810px;
+}
+.about-year3{
+	top:910px;
+}
+.about-year4{
+	top:1010px;
+}
+.about-year5{
+	top:1110px;
+}

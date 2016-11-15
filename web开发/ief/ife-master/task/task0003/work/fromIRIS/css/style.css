@@ -1,0 +1,243 @@
+/*reset*/
+* {
+    padding: 0;
+    margin: 0;
+}
+html,body {
+    height: 100%;
+    min-height: 500px;
+    font-size: 12px;
+    /*overflow: hidden;*/
+}
+/*wrap包裹器*/
+#wrap {
+    height: 100%;
+    min-width: 800px;
+}
+/*头部*/
+#header {
+    height: 12%;
+    width: 100%;
+    /*min-width: 800px;*/
+    background-color: #ddd;
+}
+/*中部任务分类，任务时间列表，任务详情*/
+.container-wrap {
+    width: 100%;
+    height: 81%;
+    overflow: hidden;
+}
+.task-classify,
+.task-timelist,
+.task-main-wrap {
+    float: left;
+    height: 100%;
+    overflow: auto;
+    /*padding-bottom: 5000px;*/
+}
+.task-main-wrap {
+    width: 100%;
+}
+.task-main {
+    margin-left: 500px;
+    height: 100%;
+    /*padding-bottom: 5000px;*/
+}
+#task-main-header {
+    padding: 15px;
+    background-color: #F2F2F2;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+.icon-write {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -10px;
+    cursor: pointer;
+}
+.icon-tick {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    margin-top: -8px;
+    cursor: pointer;
+}
+#newtask-edit-confirm {
+    overflow: hidden;
+    position: absolute;
+    left: 300px;
+    top: 50%;
+    margin-top: -12px;
+}
+#newtask-edit-confirm li {
+    list-style: none;
+    float: left;
+    padding: 5px 10px;
+    background-color: #ccc;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#edittask-edit-confirm {
+    overflow: hidden;
+    position: absolute;
+    left: 300px;
+    top: 50%;
+    margin-top: -12px;
+}
+#edittask-edit-confirm li {
+    list-style: none;
+    float: left;
+    padding: 5px 10px;
+    background-color: #ccc;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+#finish-time {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    background-color: #FAFAEE;
+}
+#finish-time p {
+    width: 200px;
+}
+#task-main-content {
+    padding: 15px;
+    line-height: 160%;
+    text-indent: 2em;
+}
+.task-classify {
+    width: 249px;
+    background-color: #F2F2F2;
+    margin-left: -100%;
+    padding-top: 20px;
+    border-right: 1px solid #ccc;
+    color: #8C8686;
+}
+#main-sort li{
+    font-size: 15px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.task-classify dt {
+    padding: 5px 0 5px 60px;
+    font-size: 14px;
+    background-image: url(../img/icon_newfile.png);
+    background-position: 25px center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: relative;
+}
+.task-classify dd {
+    padding: 5px 0 5px 70px;
+    font-size: 12px;
+    background-image: url(../img/icon_smallfile.png);
+    background-position: 50px center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: relative;
+}
+#all-tasklist-box img {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -7px;
+}
+#classify-default p {
+    padding: 5px 0 5px 60px;
+    font-size: 14px;
+    background-image: url(../img/icon_newfile.png);
+    background-position: 25px center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.task-classify .classify-active {
+    background-color: #fff;
+}
+.disappear {
+    display: none;
+}
+
+.task-timelist {
+    width: 249px;
+    position: relative;
+    margin-left: -100%;
+    left: 250px;
+    border-right: 1px solid #ccc;
+}
+#task-timelist-header {
+    overflow: hidden;
+    padding: 5px;
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+}
+#task-timelist-header li {
+    list-style: none;
+    float: left;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+#task-timelist-header .list-header-active {
+    background-color: #fff;
+    border-color: #ccc;
+}
+.timelist-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    overflow: auto;
+}
+#timetask-box {
+    position: relative;
+}
+#timetask-box dt {
+    padding: 5px 10px;
+    background-color: #FAFAEE;
+}
+#timetask-box dd {
+    padding: 5px 30px;
+    cursor: pointer;
+}
+#timetask-box .timebox-active {
+    display: block;
+}
+.task-list-finished {
+    color: red;
+}
+.time-active {
+    background-color: #ccc;
+}
+/*底部新增任务、新增分类*/
+#footer {
+    height: 7%;
+    width: 500px;
+    background-color: #eee;
+    border-top: 1px solid #ccc;
+    overflow: hidden;
+}
+.footer-add {
+    border-right: 1px solid #ccc;
+    width: 249px;
+    float: left;
+    height: 100%;
+    background: url(../img/20150503123559313_easyicon_net_24.png);
+    background-size: 15px;
+    background-position: 20% center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: relative;
+}
+.footer-add p {
+    position: absolute;
+    top: 34%;
+    left: 30%;
+    width: 200px;
+}
